@@ -1,0 +1,89 @@
+// Navigation Styles here
+.container-main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: @dark-slate;
+  width: 100%;
+  height: 6rem;
+  border-bottom: 0.25rem solid @eastern-blue;
+
+h1 {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: @white;
+  }
+
+  nav {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      height: 100%;
+      width: 20%;
+      color: @white;
+      text-decoration: none;
+      @media @mobile {
+        display: flex;
+      }
+    }
+    .nav-link:hover {
+      font-size: 2rem;
+      color: @orange;
+      text-decoration: none;
+      border-bottom: 0.5rem solid @orange;
+      border-radius: 2rem;
+      border-top: 0.5rem solid transparent;
+      
+      @media @mobile {
+        display: flex;
+      }
+    }
+
+    .link-active {
+      color: @eastern-blue;
+      border-bottom: 0.5rem solid @eastern-blue;
+      border-radius: 2rem;
+      border-top: 0.5rem solid transparent;
+    }
+
+    .link-inactive {
+      color: @white;
+    }
+
+    @media @mobile {
+      border: 1px solid red;
+      width: 90%;
+      padding-right: 0px;
+    }
+  }
+}
+
+#contact {
+  height: 100vh;
+  width: 50%;
+  background-color: blue;
+}
+#about {
+  height: 100vh;
+  width: 50%;
+  background-color: green;
+}
+#projects {
+  height: 100vh;
+  width: 50%;
+  background-color: orange;
+}
+
