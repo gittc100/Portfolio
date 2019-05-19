@@ -1,0 +1,9 @@
+[build]
+base    = "front-end/app"
+command = "yarn build" 
+publish = "front-end/app/build"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
