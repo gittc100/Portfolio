@@ -1,5 +1,5 @@
 [build]
-base = "front-end/app"
+base = "/app"
 command = "yarn build" 
-publish = "front-end/app/"
+publish = "/app"
 
