@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {TweenLite} from "gsap";
 
 class Naviagtion extends Component {
   constructor() {
@@ -114,6 +115,15 @@ class Naviagtion extends Component {
                 >
                   About
                 </a>
+                {/* <button
+                  onClick={() => {
+                    this.link("aboutActive");
+                    TweenLite.to(window, 2, {scrollTo:"#home"});
+                  }}
+                  className={`nav-link ${this.state.aboutActive}`}
+                >
+                  About
+                </button> */}
                 <a
                   onClick={() => {
                     this.link("projectsActive");
