@@ -19,13 +19,13 @@ class Footer extends Component {
             }
             className="social-link"
           >
-            <i class="fab fa-linkedin" />
+            <i className="fab fa-linkedin" />
           </div>
           <div
             onClick={() => this.onClickLink("https://github.com/gittc100")}
             className="social-link"
           >
-            <i class="fab fa-github-square" />
+            <i className="fab fa-github-square" />
           </div>
           <div
             onClick={() =>
@@ -33,7 +33,7 @@ class Footer extends Component {
             }
             className="social-link"
           >
-          <i class="fab fa-twitter-square"></i>
+          <i className="fab fa-twitter-square"></i>
           </div>
         </div>
         <div>

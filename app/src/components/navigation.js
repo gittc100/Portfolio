@@ -93,7 +93,7 @@ class Naviagtion extends Component {
           <nav>
             {this.state.windowWidth <= 600 ? (
               <div className={`container-hamberger ${this.state.hamActive}`}>
-                <i onClick={this.clickHamberger} class={`fas fa-bars `} />
+                <i onClick={this.clickHamberger} className={`fas fa-bars `} />
               </div>
             ) : (
               <>
