@@ -24,7 +24,7 @@ class Contact extends Component {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     let testAccount = await nodemailer.createTestAccount();
-
+    console.log(`testAccount: ${testAccount}`)
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
       host: "smtp.ethereal.email",
@@ -35,7 +35,7 @@ class Contact extends Component {
         pass: testAccount.pass // generated ethereal password
       }
     });
-
+    console.log(`transporter: ${transporter}`)
     // send mail with defined transport object
     let info = await transporter.sendMail({
       from: '"Fred Foo 👻" <foo@example.com>', // sender address
