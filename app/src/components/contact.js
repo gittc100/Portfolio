@@ -19,7 +19,8 @@ class Contact extends Component {
   };
 
   // async..await is not allowed in global scope, must use a wrapper
-  sendEmail = async () => {
+  sendEmail = async (event) => {
+    event.preventDefault()
     console.log("send email")
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
