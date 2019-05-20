@@ -18,44 +18,50 @@ class Contact extends Component {
     });
   };
 
+  print = (e) => {
+    console.log("send email2");
+    e.preventDefault();
+    // return;
+  }
+
   // async..await is not allowed in global scope, must use a wrapper
   sendEmail = async event => {
     event.preventDefault();
     console.log("send email");
-    try {
+    // try {
       // Generate test SMTP service account from ethereal.email
       // Only needed if you don't have a real mail account for testing
       let testAccount = await nodemailer.createTestAccount();
       console.log(`testAccount: ${testAccount}`);
       // create reusable transporter object using the default SMTP transport
-      let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: testAccount.user, // generated ethereal user
-          pass: testAccount.pass // generated ethereal password
-        }
-      });
-      console.log(`transporter: ${transporter}`);
-      // send mail with defined transport object
-      let info = await transporter.sendMail({
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: "tomclaydon102@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>" // html body
-      });
-
-      console.log("Message sent: %s", info.messageId);
-      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-      // Preview only available when sending through an Ethereal account
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    } catch (error) {
-      console.log(`error:${error}`)
-    }
+      // let transporter = nodemailer.createTransport({
+      //   host: "smtp.ethereal.email",
+      //   port: 587,
+      //   secure: false, // true for 465, false for other ports
+      //   auth: {
+      //     user: testAccount.user, // generated ethereal user
+      //     pass: testAccount.pass // generated ethereal password
+      //   }
+      // });
+      // console.log(`transporter: ${transporter}`);
+      // // send mail with defined transport object
+      // let info = await transporter.sendMail({
+      //   from: '"Fred Foo 👻" <foo@example.com>', // sender address
+      //   to: "tomclaydon102@gmail.com", // list of receivers
+      //   subject: "Hello ✔", // Subject line
+      //   text: "Hello world?", // plain text body
+      //   html: "<b>Hello world?</b>" // html body
+      // });
+      
+      // console.log("Message sent: %s", info.messageId);
+      // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      
+      // // Preview only available when sending through an Ethereal account
+      // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      // // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    // } catch (error) {
+    //   console.log(`error:${error}`);
+    // }
   };
 
   // main().catch(console.error);
@@ -65,7 +71,7 @@ class Contact extends Component {
       <div className="container-main-contact">
         <section id="contact">
           <div className="container-form">
-            <form>
+            <form onSubmit={this.sendEmail}>
               <h2>CONTACT</h2>
               <input
                 autoComplete="off"
@@ -99,7 +105,7 @@ class Contact extends Component {
                 placeholder="Description"
                 value={this.state["description"]}
               />
-              <button onClick={() => this.sendEmail()}>Submit</button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </section>
