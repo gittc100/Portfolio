@@ -178,7 +178,7 @@ textarea {
   flex-direction: row;
 }
 .container-main-nav {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -202,6 +202,14 @@ textarea {
     flex-direction: row;
     height: 8rem;
   }
+}
+.container-main-nav button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.container-main-nav button:focus {
+  outline: 0;
 }
 .container-main-nav h1 {
   margin-left: 2rem;
@@ -245,6 +253,7 @@ textarea {
   margin: 0, auto;
 }
 .container-main-nav nav .container-hamberger i {
+  transition-duration: 1s;
   cursor: pointer;
   color: #FFFFFF;
   margin: 0 auto;
@@ -269,6 +278,7 @@ textarea {
   width: 20%;
   color: #FFFFFF;
   text-decoration: none;
+  transition-duration: 1s;
 }
 .container-main-nav nav .nav-link:hover {
   font-size: 2rem;
@@ -293,9 +303,9 @@ textarea {
   color: #FFFFFF;
 }
 .container-extended-nav {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
-  top: 8rem;
+  top: -16rem;
   left: 0;
   width: 100%;
   height: 24rem;
@@ -305,7 +315,16 @@ textarea {
   justify-content: space-between;
   align-items: center;
 }
+.container-extended-nav button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.container-extended-nav button:focus {
+  outline: 0;
+}
 .container-extended-nav .nav-link {
+  transition-duration: 1s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -390,6 +409,7 @@ textarea {
   background-color: #17A2B8;
   border: 1px solid #1b242f;
   border-radius: 0.5rem;
+  transition-duration: 1s;
 }
 .container-main-contact #contact .container-form form button:hover {
   font-size: 2rem;
@@ -408,6 +428,13 @@ textarea {
   height: 20rem;
   background-color: #1b242f;
 }
+.container-main-footer p {
+  text-align: center;
+  color: #17A2B8;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
 .container-main-footer .links-container {
   display: flex;
   flex-direction: row;
@@ -415,13 +442,34 @@ textarea {
   width: 20%;
 }
 .container-main-footer .links-container .social-link {
+  transition-duration: 1s;
   color: #17A2B8;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .container-main-footer .links-container .social-link i {
   font-size: 6rem;
 }
+.container-main-footer .links-container .social-link p {
+  display: none;
+  color: white;
+  transition-duration: 1s;
+}
 .container-main-footer .links-container .social-link:hover {
+  color: #f58a11;
+}
+.container-main-footer .links-container .social-link:hover i {
+  font-size: 3rem;
+}
+.container-main-footer .links-container .social-link:hover p {
+  display: block;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
   color: #f58a11;
 }
 @media (max-width: 900px) {
@@ -433,13 +481,6 @@ textarea {
   .container-main-footer .links-container {
     width: 65%;
   }
-}
-.container-main-footer p {
-  text-align: center;
-  color: #17A2B8;
-  font-size: 1.6rem;
-  margin: 0;
-  padding: 0;
 }
 .container-main-home #home {
   margin-top: 6rem;
@@ -473,6 +514,7 @@ textarea {
   flex-wrap: wrap;
 }
 .container-main-projects #projects .container-main .container-projects .container-project {
+  transition-duration: 1s;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -486,11 +528,13 @@ textarea {
   overflow: hidden;
 }
 .container-main-projects #projects .container-main .container-projects .container-project img {
+  transition-duration: 1s;
   width: 100%;
   height: auto;
   border-radius: 1rem;
 }
 .container-main-projects #projects .container-main .container-projects .container-project h3 {
+  transition-duration: 1s;
   display: none;
   color: #FFFFFF;
   text-align: center;
@@ -500,6 +544,7 @@ textarea {
   width: 80%;
 }
 .container-main-projects #projects .container-main .container-projects .container-project h4 {
+  transition-duration: 1s;
   display: none;
   color: #FFFFFF;
   text-align: center;
@@ -510,6 +555,7 @@ textarea {
   text-align: left;
 }
 .container-main-projects #projects .container-main .container-projects .container-project p {
+  transition-duration: 1s;
   display: none;
   color: #FFFFFF;
   text-align: left;
@@ -519,6 +565,7 @@ textarea {
   width: 80%;
 }
 .container-main-projects #projects .container-main .container-projects .container-project button {
+  transition-duration: 1s;
   display: none;
   cursor: pointer;
   font-size: 2rem;

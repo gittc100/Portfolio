@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {TweenLite} from "gsap";
+import { TweenMax, TweenLite, Elastic, Power0, Power1, Power2, Power3, Power4, Circ } from "gsap";
+import scrollTo from "../../node_modules/gsap/ScrollToPlugin";
 
 class Naviagtion extends Component {
   constructor() {
@@ -43,16 +44,29 @@ class Naviagtion extends Component {
   };
 
   clickHamberger = () => {
-    let x = this.state.hamActive === "ham-active"? "ham-inactive" : "ham-active";
+    let x =
+      this.state.hamActive === "ham-active" ? "ham-inactive" : "ham-active";
     this.setState({
       ...this.state,
       extendMobileNav: !this.state.extendMobileNav,
       hamActive: x
-    })
+    });
+    if (this.state.extendMobileNav === false) {
+      return TweenLite.to(".container-extended-nav", 0.2, {
+        ease: Power0.easeOut,
+        y: 240
+      });
+    } else {
+      return TweenLite.to(".container-extended-nav", 0.2, {
+        ease: Power0.easeOut,
+        y: 0
+      });
+    }
   };
 
   clickLinkInExtended = value => {
-    let x = this.state.hamActive === "ham-active"? "ham-inactive" : "ham-active";
+    let x =
+      this.state.hamActive === "ham-active" ? "ham-inactive" : "ham-active";
     this.setState(
       {
         ...this.state,
@@ -63,13 +77,22 @@ class Naviagtion extends Component {
         this.link(value);
       }
     );
+    return TweenLite.to(".container-extended-nav", 0.2, {
+      ease: Power0.easeOut,
+      y: 0
+    });
   };
 
   link = btn => {
     for (let key in this.state) {
       console.log(key);
       console.log(btn);
-      if(key !== "homeActive" && key !== "aboutActive" && key !== "projectsActive" && key !== "contactActive"){
+      if (
+        key !== "homeActive" &&
+        key !== "aboutActive" &&
+        key !== "projectsActive" &&
+        key !== "contactActive"
+      ) {
         continue;
       } else if (btn === key) {
         console.log("true");
@@ -97,110 +120,113 @@ class Naviagtion extends Component {
               </div>
             ) : (
               <>
-                <a
+                <button
                   onClick={() => {
                     this.link("homeActive");
+                    TweenMax.to(window, 1, {
+                      scrollTo: { y: "#home", offsetY: 0 },
+                      ease: Power3.easeOut
+                    });
                   }}
                   className={`nav-link ${this.state.homeActive}`}
-                  href="#home"
                 >
                   Home
-                </a>
-                <a
+                </button>
+
+                <button
                   onClick={() => {
                     this.link("aboutActive");
-                  }}
-                  className={`nav-link ${this.state.aboutActive}`}
-                  href="#about"
-                >
-                  About
-                </a>
-                {/* <button
-                  onClick={() => {
-                    this.link("aboutActive");
-                    TweenLite.to(window, 2, {scrollTo:"#home"});
+                    TweenMax.to(window, 1, {
+                      scrollTo: { y: "#about", offsetY: 50 },
+                      ease: Power3.easeOut
+                    });
                   }}
                   className={`nav-link ${this.state.aboutActive}`}
                 >
                   About
-                </button> */}
-                <a
+                </button>
+
+                <button
                   onClick={() => {
                     this.link("projectsActive");
+                    TweenMax.to(window, 1, {
+                      scrollTo: { y: "#projects", offsetY: 50 },
+                      ease: Power3.easeOut
+                    });
                   }}
                   className={`nav-link ${this.state.projectsActive}`}
-                  href="#projects"
                 >
                   Projects
-                </a>
-                <a
+                </button>
+
+                <button
                   onClick={() => {
                     this.link("contactActive");
+                    TweenMax.to(window, 1, {
+                      scrollTo: { y: "#contact", offsetY: -20 },
+                      ease: Power3.easeOut
+                    });
                   }}
                   className={`nav-link ${this.state.contactActive}`}
-                  href="#contact"
                 >
                   Contact
-                </a>
+                </button>
               </>
             )}
           </nav>
         </div>
-        {this.state.windowWidth <= 600 &&
-        this.state.extendMobileNav === true ? (
+
+        {this.state.windowWidth <= 600 ? (
           <div className="container-extended-nav">
-            <a
+            <button
               onClick={() => {
                 this.clickLinkInExtended("homeActive");
-                {
-                  /* this.clickHamberger();
-                this.link("homeActive"); */
-                }
+                TweenMax.to(window,1, {
+                  scrollTo: { y: "#home", offsetY: 50 },
+                  ease: Power3.easeOut
+                });
               }}
               className={`nav-link ${this.state.homeActive}`}
-              href="#home"
             >
               Home
-            </a>
-            <a
+            </button>
+            <button
               onClick={() => {
                 this.clickLinkInExtended("aboutActive");
-                {
-                  /* this.clickHamberger();
-                this.link("aboutActive"); */
-                }
+                TweenMax.to(window, 1, {
+                  scrollTo: { y: "#about", offsetY: 75 },
+                  ease: Power3.easeOut
+                });
               }}
               className={`nav-link ${this.state.aboutActive}`}
-              href="#about"
             >
               About
-            </a>
-            <a
+            </button>
+            <button
               onClick={() => {
                 this.clickLinkInExtended("projectsActive");
-                {
-                  /* this.clickHamberger();
-                this.link("projectsActive"); */
-                }
+                TweenMax.to(window, 1, {
+                  scrollTo: { y: "#projects", offsetY: 80 },
+                  ease: Power3.easeOut
+                });
               }}
               className={`nav-link ${this.state.projectsActive}`}
-              href="#projects"
             >
               Projects
-            </a>
-            <a
+            </button>
+            <button
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
-                {
-                  /* this.clickHamberger();
-                this.link("contactActive"); */
-                }
+                TweenMax.to(window, 1, {
+                  scrollTo: { y: "#contact", offsetY: 75 },
+                  ease: Power3.easeOut
+                });
               }}
               className={`nav-link ${this.state.contactActive}`}
-              href="#contact"
             >
-              Contact
-            </a>
+            Contact
+            </button>
+  
           </div>
         ) : (
           <></>
@@ -211,3 +237,113 @@ class Naviagtion extends Component {
 }
 
 export default Naviagtion;
+
+{
+  /* <a
+                  onClick={() => {
+                    this.link("contactActive");
+                  }}
+                  className={`nav-link ${this.state.contactActive}`}
+                  href="#contact"
+                >
+                  Contact
+                </a> */
+}
+{
+  /* <a
+                  onClick={() => {
+                    this.link("projectsActive");
+                  }}
+                  className={`nav-link ${this.state.projectsActive}`}
+                  href="#projects"
+                >
+                  Projects
+                </a> */
+}
+{
+  /* <a
+                  onClick={() => {
+                    this.link("homeActive");
+                  }}
+                  className={`nav-link ${this.state.homeActive}`}
+                  href="#home"
+                >
+                  Home
+                </a> */
+}
+{
+  /* <a
+                  onClick={() => {
+                    this.link("aboutActive");
+                  }}
+                  className={`nav-link ${this.state.aboutActive}`}
+                  href="#about"
+                >
+                  About
+                </a> */
+}
+{
+  /* <a
+              onClick={() => {
+                this.clickLinkInExtended("homeActive");
+                
+                 this.clickHamberger();
+                this.link("homeActive"); 
+              
+              }}
+              className={`nav-link ${this.state.homeActive}`}
+              href="#home"
+            >
+              Home
+            </a> */
+}
+{
+  /* <a
+  onClick={() => {
+    this.clickLinkInExtended("aboutActive");
+    
+      this.clickHamberger();
+      this.link("aboutActive");
+    
+  }}
+  className={`nav-link ${this.state.aboutActive}`}
+  href="#about"
+>
+  About
+</a> */
+}
+{
+  /* 
+            <a
+              onClick={() => {
+                this.clickLinkInExtended("projectsActive");
+                
+                  this.clickHamberger();
+                this.link("projectsActive"); 
+                
+              }}
+              className={`nav-link ${this.state.projectsActive}`}
+              href="#projects"
+            >
+              Projects
+            </a> */
+}
+          {/* <a
+              onClick={() => {
+                this.clickLinkInExtended("contactActive");
+                
+                this.clickHamberger();
+                this.link("contactActive"); 
+                
+              }}
+              className={`nav-link ${this.state.contactActive}`}
+              href="#contact"
+            >
+              Contact
+            </a> */}
+{
+  /* && */
+}
+{
+  /* this.state.extendMobileNav === true */
+}

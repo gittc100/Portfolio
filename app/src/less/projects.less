@@ -1,8 +1,4 @@
-// #projects {
-//     height: 100vh;
-//     width: 100%;
-//     background-color: red;
-// }
+
 .container-main-projects {
   min-height: 100vh;
   background-color: @dark-grey;
@@ -23,6 +19,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         .container-project {
+          transition-duration: 1s;
           display: flex;
           position: relative;
           flex-direction: column;
@@ -39,11 +36,13 @@
           overflow: hidden;
           img {
             // display: none;
+            transition-duration: 1s;
             width: 100%;
             height: auto;
             border-radius: 1rem;
           }
           h3 {
+            transition-duration: 1s;
             display: none;
             color: @white;
             text-align: center;
@@ -53,6 +52,7 @@
             width: 80%;
           }
           h4 {
+            transition-duration: 1s;
             display: none;
             color: @white;
             text-align: center;
@@ -63,6 +63,7 @@
             text-align: left;
           }
           p {
+            transition-duration: 1s;
             display: none;
             color: @white;
             text-align: left;
@@ -72,6 +73,7 @@
             width: 80%;
           }
           button {
+            transition-duration: 1s;
             display: none;
             cursor: pointer;
             font-size: 2rem;

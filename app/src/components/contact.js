@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-const nodemailer = require("nodemailer");
+var nodemailer = require("nodemailer");
+require("dotenv").config();
 
 class Contact extends Component {
   constructor() {
@@ -18,53 +19,82 @@ class Contact extends Component {
     });
   };
 
-  print = (e) => {
+  print = e => {
     console.log("send email2");
     e.preventDefault();
     // return;
-  }
-
-  // async..await is not allowed in global scope, must use a wrapper
-  sendEmail = async event => {
-    event.preventDefault();
-    console.log("send email");
-    // try {
-      // Generate test SMTP service account from ethereal.email
-      // Only needed if you don't have a real mail account for testing
-      let testAccount = await nodemailer.createTestAccount();
-      console.log(`testAccount: ${testAccount}`);
-      // create reusable transporter object using the default SMTP transport
-      // let transporter = nodemailer.createTransport({
-      //   host: "smtp.ethereal.email",
-      //   port: 587,
-      //   secure: false, // true for 465, false for other ports
-      //   auth: {
-      //     user: testAccount.user, // generated ethereal user
-      //     pass: testAccount.pass // generated ethereal password
-      //   }
-      // });
-      // console.log(`transporter: ${transporter}`);
-      // // send mail with defined transport object
-      // let info = await transporter.sendMail({
-      //   from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      //   to: "tomclaydon102@gmail.com", // list of receivers
-      //   subject: "Hello ✔", // Subject line
-      //   text: "Hello world?", // plain text body
-      //   html: "<b>Hello world?</b>" // html body
-      // });
-      
-      // console.log("Message sent: %s", info.messageId);
-      // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-      
-      // // Preview only available when sending through an Ethereal account
-      // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-      // // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    // } catch (error) {
-    //   console.log(`error:${error}`);
-    // }
   };
 
-  // main().catch(console.error);
+  // async..await is not allowed in global scope, must use a wrapper
+  sendEmail = event => {
+    event.preventDefault();
+    console.log("test")
+
+    var smtpTransport = nodemailer.createTransport({
+      service: "Gmail",  // sets automatically host, port and connection security settings
+      auth: {
+          user: "tomclaydonportfolio@gmail.com",
+          pass: "portmoto102?"
+      }
+   });
+   
+   smtpTransport.sendMail({  //email options
+      from: "tomclaydonportfolio@gmail.com", // sender address.  Must be the same as authenticated user if using Gmail.
+      to: "tomclaydonportfolio@gmail.com", // receiver
+      subject: "Emailing with nodemailer", // subject
+      text: "Email Example with nodemailer" // body
+   }, function(error, response){  //callback
+      if(error){
+          console.log(error);
+      }else{
+          console.log("Message sent: " + response.message);
+      }
+      
+      smtpTransport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
+   });
+
+
+
+    // let x = process.env.REACT_APP_TEST;
+    // x.toString();
+    // console.log(x);
+
+    // const trans = nodemailer.createTransport({
+    //   service: "Gmail",
+    //   auth: {
+    //     user: "tomclaydonportfolio@gmail.com",
+    //     pass: "portmoto102?"
+    //   }
+    // });
+    // console.log(trans)
+    // // console.log(trans.sendMail)
+    // trans.verify(function(error, success) {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log("Server is ready to take our messages");
+    //   }
+    // });
+
+
+
+    // let mail_op = {
+    //   from: "tomclaydonportfolio@gmail.com",
+    //   to: "tomclaydonportfolio@gmail.com",
+    //   subject: "Sending Email using Node.js",
+    //   // text: "test",
+    //   html: '<p>Your html here</p>'// plain text body
+    // };
+    // console.log(mail_op)
+
+    // trans.sendMail(mail_op, (err, info) => {
+    //   if (err) {
+    //     console.log(`Error: ${err}`);
+    //   } else {
+    //     console.log("Email sent: " + info.response);
+    //   }
+    // });
+  };
 
   render() {
     return (
