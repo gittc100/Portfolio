@@ -19,6 +19,7 @@ class Naviagtion extends Component {
   componentDidMount() {
     let width = window.innerWidth;
     console.log(width);
+    TweenMax.to("body", 5, {backgroundColor:"red"});
     this.setState({
       windowWidth: width
     });
