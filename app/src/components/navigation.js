@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TweenMax, TweenLite, Elastic, Power0, Power1, Power2, Power3, Power4, Circ } from "gsap";
-import scrollTo from "../../node_modules/gsap/ScrollToPlugin";
+// import scrollTo from "../../node_modules/gsap/ScrollToPlugin";
+import { ScrollToPlugin } from "gsap/all";﻿
 
 class Naviagtion extends Component {
   constructor() {
