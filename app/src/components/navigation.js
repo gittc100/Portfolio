@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { TweenMax, TweenLite, Elastic, Power0, Power1, Power2, Power3, Power4, Circ, scrollTo } from "gsap/all";
+import { TweenMax, TweenLite, Elastic, Power0, Power1, Power2, Power3, Power4, Circ} from "gsap";
 // import { ScrollToPlugin } from "gsap/all";﻿
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 class Naviagtion extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class Naviagtion extends Component {
   componentDidMount() {
     let width = window.innerWidth;
     console.log(width);
-    TweenMax.to("body", 5, {backgroundColor:"red"});
+    // TweenMax.to("body", 5, {backgroundColor:"red"});
     this.setState({
       windowWidth: width
     });
