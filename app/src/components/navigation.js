@@ -23,19 +23,38 @@ class Naviagtion extends Component {
       hamActive: "ham-inactive",
       windowWidth: 0,
       extendMobileNav: false,
-      homeRef: React.createRef(),
-      aboutRef: React.createRef(),
-      projectsRef: React.createRef(),
-      contactRef: React.createRef()
+      divHomeTop: 0,
+      divAboutTop: 0,
+      divProjectsTop: 0,
+      divContactTop: 0
+
+      // homeRef: React.createRef(),
+      // aboutRef: React.createRef(),
+      // projectsRef: React.createRef(),
+      // contactRef: React.createRef()
     };
   }
 
   componentDidMount() {
     let width = window.innerWidth;
-    console.log(width);
-    // TweenMax.to("body", 5, {backgroundColor:"red"});
+    let divHomeTop =
+      document.getElementById("home").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divAboutTop =
+      document.getElementById("about").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divProjectsTop =
+      document.getElementById("projects").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divContactTop =
+      document.getElementById("contact").getBoundingClientRect().top +
+      window.pageYOffset;
     this.setState({
-      windowWidth: width
+      windowWidth: width,
+      divHomeTop,
+      divAboutTop,
+      divProjectsTop,
+      divContactTop
     });
     window.addEventListener("resize", () => this.updateWidth());
   }
@@ -52,9 +71,24 @@ class Naviagtion extends Component {
 
   updateWidth = () => {
     let width = window.innerWidth;
-    console.log(width);
+    let divHomeTop =
+      document.getElementById("home").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divAboutTop =
+      document.getElementById("about").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divProjectsTop =
+      document.getElementById("projects").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divContactTop =
+      document.getElementById("contact").getBoundingClientRect().top +
+      window.pageYOffset;
     this.setState({
-      windowWidth: width
+      windowWidth: width,
+      divHomeTop,
+      divAboutTop,
+      divProjectsTop,
+      divContactTop
     });
   };
 
@@ -140,31 +174,16 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("homeActive");
                     {
-                      /* TweenMax.to(window.scrollTo(0, this.homeRef), 1, {
-                      ease: Power3.easeOut
-                    }); */
-                    }
-
-                    {
-                      /* var left = offsets.left; */
-                    }
-
-                    let div = document
+                      /* let div = document
                       .getElementById("home")
                       .getBoundingClientRect();
-                    let top = div.top;
-                    {/* window.scrollTo(0,100); */}
+                    let top = div.top; */
+                    }
                     window.scrollTo({
-                      top: top,
+                      top: this.state.divHomeTop,
                       left: 0,
                       behavior: "smooth"
                     });
-                    {/* 
-                    TweenMax.to(window, 1, {
-                      scrollTo: { top: "#about"},
-                      ease: Power3.easeOut
-                    }); 
-                    */}
                   }}
                   className={`nav-link ${this.state.homeActive}`}
                 >
@@ -176,9 +195,22 @@ class Naviagtion extends Component {
                 <button
                   onClick={() => {
                     this.link("aboutActive");
-                    TweenMax.to(window, 1, {
+                    {
+                      /* TweenMax.to(window, 1, {
                       scrollTo: { y: "#about" , autoKill:false},
                       ease: Power3.easeOut
+                    }); */
+                    }
+                    {
+                      /* let div = document
+                      .getElementById("about")
+                      .getBoundingClientRect();
+                    let top = div.top; */
+                    }
+                    window.scrollTo({
+                      top: this.state.divAboutTop,
+                      left: 0,
+                      behavior: "smooth"
                     });
                   }}
                   className={`nav-link ${this.state.aboutActive}`}
@@ -189,9 +221,22 @@ class Naviagtion extends Component {
                 <button
                   onClick={() => {
                     this.link("projectsActive");
-                    TweenMax.to(window, 1, {
+                    {
+                      /* TweenMax.to(window, 1, {
                       scrollTo: { y: "#projects", offsetY: 50, autoKill:false },
                       ease: Power3.easeOut
+                    }); */
+                    }
+                    {
+                      /* let div = document
+                      .getElementById("projects")
+                      .getBoundingClientRect();
+                    let top = div.top; */
+                    }
+                    window.scrollTo({
+                      top: this.state.divProjectsTop,
+                      left: 0,
+                      behavior: "smooth"
                     });
                   }}
                   className={`nav-link ${this.state.projectsActive}`}
@@ -202,9 +247,22 @@ class Naviagtion extends Component {
                 <button
                   onClick={() => {
                     this.link("contactActive");
-                    TweenMax.to(window, 1, {
+                    {
+                      /* TweenMax.to(window, 1, {
                       scrollTo: { y: "#contact", offsetY: -20 },
                       ease: Power3.easeOut
+                    }); */
+                    }
+                    {
+                      /* let div = document
+                      .getElementById("contact")
+                      .getBoundingClientRect();
+                    let top = div.top; */
+                    }
+                    window.scrollTo({
+                      top: this.state.divContactTop,
+                      left: 0,
+                      behavior: "smooth"
                     });
                   }}
                   className={`nav-link ${this.state.contactActive}`}
@@ -240,7 +298,15 @@ class Naviagtion extends Component {
                       ease: Power3.easeOut
                     }); */
                 }
-                window.scrollTo(0, this.homeRef);
+                let div = document
+                  .getElementById("home")
+                  .getBoundingClientRect();
+                let top = div.top;
+                window.scrollTo({
+                  top: top,
+                  left: 0,
+                  behavior: "smooth"
+                });
               }}
               className={`nav-link ${this.state.homeActive}`}
             >
@@ -249,9 +315,20 @@ class Naviagtion extends Component {
             <button
               onClick={() => {
                 this.clickLinkInExtended("aboutActive");
-                TweenMax.to(window, 1, {
+                {
+                  /* TweenMax.to(window, 1, {
                   scrollTo: { y: "#about", offsetY: 75 },
                   ease: Power3.easeOut
+                }); */
+                }
+                let div = document
+                  .getElementById("about")
+                  .getBoundingClientRect();
+                let top = div.top;
+                window.scrollTo({
+                  top: top,
+                  left: 0,
+                  behavior: "smooth"
                 });
               }}
               className={`nav-link ${this.state.aboutActive}`}
@@ -261,9 +338,20 @@ class Naviagtion extends Component {
             <button
               onClick={() => {
                 this.clickLinkInExtended("projectsActive");
-                TweenMax.to(window, 1, {
+                {
+                  /* TweenMax.to(window, 1, {
                   scrollTo: { y: "#projects", offsetY: 80 },
                   ease: Power3.easeOut
+                }); */
+                }
+                let div = document
+                  .getElementById("projects")
+                  .getBoundingClientRect();
+                let top = div.top;
+                window.scrollTo({
+                  top: top,
+                  left: 0,
+                  behavior: "smooth"
                 });
               }}
               className={`nav-link ${this.state.projectsActive}`}
@@ -273,9 +361,20 @@ class Naviagtion extends Component {
             <button
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
-                TweenMax.to(window, 1, {
+                {
+                  /* TweenMax.to(window, 1, {
                   scrollTo: { y: "#contact", offsetY: 75 },
                   ease: Power3.easeOut
+                }); */
+                }
+                let div = document
+                  .getElementById("contact")
+                  .getBoundingClientRect();
+                let top = div.top;
+                window.scrollTo({
+                  top: top,
+                  left: 0,
+                  behavior: "smooth"
                 });
               }}
               className={`nav-link ${this.state.contactActive}`}
