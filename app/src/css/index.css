@@ -131,6 +131,7 @@ table {
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -700,9 +701,20 @@ textarea {
   display: initial;
 }
 .container-main-about {
+  margin-top: 6rem;
   min-height: 100vh;
   background-color: #272727;
   border-bottom: 1px solid #17A2B8;
+}
+@media (max-width: 900px) {
+  .container-main-about {
+    margin-top: 7rem;
+  }
+}
+@media (max-width: 600px) {
+  .container-main-about {
+    margin-top: 8rem;
+  }
 }
 .container-main-about #about {
   padding: 5%;

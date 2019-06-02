@@ -26,38 +26,53 @@ class Naviagtion extends Component {
       divHomeTop: 0,
       divAboutTop: 0,
       divProjectsTop: 0,
-      divContactTop: 0
-
-      // homeRef: React.createRef(),
-      // aboutRef: React.createRef(),
-      // projectsRef: React.createRef(),
-      // contactRef: React.createRef()
+      divContactTop: 0,
+      divHomeBottom: 0,
+      divAboutBottom: 0,
+      divProjectsBottom: 0,
+      divContactBottom: 0
     };
   }
 
   componentDidMount() {
-    let buf = 100;
     let width = window.innerWidth;
     let divHomeTop =
-      document.getElementById("home").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      // document.getElementById("home").getBoundingClientRect().top +
+      window.pageYOffset;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
+    let divHomeBottom =
+      // document.getElementById("home").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divAboutBottom =
+      document.getElementById("about").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divProjectsBottom =
+      document.getElementById("projects").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divContactBottom =
+      document.getElementById("contact").getBoundingClientRect().bottom +
+      window.pageYOffset;
     this.setState({
       windowWidth: width,
       divHomeTop,
       divAboutTop,
       divProjectsTop,
-      divContactTop
+      divContactTop,
+      divHomeBottom,
+      divAboutBottom,
+      divProjectsBottom,
+      divContactBottom
     });
     window.addEventListener("resize", () => this.updateWidth());
+    window.addEventListener("scroll", () => this.checkCurrentLocation());
   }
 
   // componentDidUpdate(prevProps, prevState){
@@ -69,28 +84,77 @@ class Naviagtion extends Component {
   //     });
   //   }
   // }
+  checkCurrentLocation = () => {
+    console.log("scrolling");
+    let currentLocation = window.scrollY;
+    console.log(currentLocation);
+    let {
+      divHomeTop,
+      divHomeBottom,
+      divAboutTop,
+      divAboutBottom,
+      divProjectsTop,
+      divProjectsBottom,
+      divContactTop,
+      divContactBottom
+    } = this.state;
+    // if (divHomeTop <= currentLocation && divHomeBottom >= currentLocation) {
+    //   this.link("homeActive");
+    // } 
+   if (
+      divAboutTop <= currentLocation &&
+      divAboutBottom >= currentLocation
+    ) {
+      this.link("aboutActive");
+    } else if (
+      divProjectsTop <= currentLocation &&
+      divProjectsBottom >= currentLocation
+    ) {
+      this.link("projectsActive");
+    } else if (
+      divContactTop <= currentLocation &&
+      divContactBottom >= currentLocation
+    ) {
+      this.link("contactActive");
+    }
+  };
 
   updateWidth = () => {
-    let buf = -10;
     let width = window.innerWidth;
     let divHomeTop =
-      document.getElementById("home").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      // document.getElementById("home").getBoundingClientRect().top +
+      window.pageYOffset;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
-      window.pageYOffset + buf;
+      window.pageYOffset;
+    let divHomeBottom =
+      // document.getElementById("home").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divAboutBottom =
+      document.getElementById("about").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divProjectsBottom =
+      document.getElementById("projects").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divContactBottom =
+      document.getElementById("contact").getBoundingClientRect().bottom +
+      window.pageYOffset;
     this.setState({
       windowWidth: width,
       divHomeTop,
       divAboutTop,
       divProjectsTop,
-      divContactTop
+      divContactTop,
+      divHomeBottom,
+      divAboutBottom,
+      divProjectsBottom,
+      divContactBottom
     });
   };
 
@@ -171,8 +235,7 @@ class Naviagtion extends Component {
               </div>
             ) : (
               <>
-                <button
-                  ref={this.homeRef}
+                {/* <button
                   onClick={() => {
                     this.link("homeActive");
                     window.scrollTo({
@@ -184,7 +247,7 @@ class Naviagtion extends Component {
                   className={`nav-link ${this.state.homeActive}`}
                 >
                   Home
-                </button>
+                </button> */}
                 <button
                   onClick={() => {
                     this.link("aboutActive");
@@ -233,27 +296,27 @@ class Naviagtion extends Component {
 
         {this.state.windowWidth <= 600 ? (
           <div className="container-extended-nav">
-            <button
+            {/* <button
               onClick={() => {
                 this.clickLinkInExtended("homeActive");
                 window.scrollTo({
-                      top: this.state.divHomeTop,
-                      left: 0,
-                      behavior: "smooth"
-                    });
+                  top: this.state.divHomeTop,
+                  left: 0,
+                  behavior: "smooth"
+                });
               }}
               className={`nav-link ${this.state.homeActive}`}
             >
               Home
-            </button>
+            </button> */}
             <button
               onClick={() => {
                 this.clickLinkInExtended("aboutActive");
                 window.scrollTo({
-                      top: this.state.divAboutTop,
-                      left: 0,
-                      behavior: "smooth"
-                    });
+                  top: this.state.divAboutTop,
+                  left: 0,
+                  behavior: "smooth"
+                });
               }}
               className={`nav-link ${this.state.aboutActive}`}
             >
@@ -263,10 +326,10 @@ class Naviagtion extends Component {
               onClick={() => {
                 this.clickLinkInExtended("projectsActive");
                 window.scrollTo({
-                      top: this.state.divProjectsTop,
-                      left: 0,
-                      behavior: "smooth"
-                    });
+                  top: this.state.divProjectsTop,
+                  left: 0,
+                  behavior: "smooth"
+                });
               }}
               className={`nav-link ${this.state.projectsActive}`}
             >
@@ -276,10 +339,10 @@ class Naviagtion extends Component {
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
                 window.scrollTo({
-                      top: this.state.divContactTop,
-                      left: 0,
-                      behavior: "smooth"
-                    });
+                  top: this.state.divContactTop,
+                  left: 0,
+                  behavior: "smooth"
+                });
               }}
               className={`nav-link ${this.state.contactActive}`}
             >
@@ -296,114 +359,3 @@ class Naviagtion extends Component {
 
 export default Naviagtion;
 
-{
-  /* <a
-                  onClick={() => {
-                    this.link("contactActive");
-                  }}
-                  className={`nav-link ${this.state.contactActive}`}
-                  href="#contact"
-                >
-                  Contact
-                </a> */
-}
-{
-  /* <a
-                  onClick={() => {
-                    this.link("projectsActive");
-                  }}
-                  className={`nav-link ${this.state.projectsActive}`}
-                  href="#projects"
-                >
-                  Projects
-                </a> */
-}
-{
-  /* <a
-                  onClick={() => {
-                    this.link("homeActive");
-                  }}
-                  className={`nav-link ${this.state.homeActive}`}
-                  href="#home"
-                >
-                  Home
-                </a> */
-}
-{
-  /* <a
-                  onClick={() => {
-                    this.link("aboutActive");
-                  }}
-                  className={`nav-link ${this.state.aboutActive}`}
-                  href="#about"
-                >
-                  About
-                </a> */
-}
-{
-  /* <a
-              onClick={() => {
-                this.clickLinkInExtended("homeActive");
-                
-                 this.clickHamberger();
-                this.link("homeActive"); 
-              
-              }}
-              className={`nav-link ${this.state.homeActive}`}
-              href="#home"
-            >
-              Home
-            </a> */
-}
-{
-  /* <a
-  onClick={() => {
-    this.clickLinkInExtended("aboutActive");
-    
-      this.clickHamberger();
-      this.link("aboutActive");
-    
-  }}
-  className={`nav-link ${this.state.aboutActive}`}
-  href="#about"
->
-  About
-</a> */
-}
-{
-  /* 
-            <a
-              onClick={() => {
-                this.clickLinkInExtended("projectsActive");
-                
-                  this.clickHamberger();
-                this.link("projectsActive"); 
-                
-              }}
-              className={`nav-link ${this.state.projectsActive}`}
-              href="#projects"
-            >
-              Projects
-            </a> */
-}
-{
-  /* <a
-              onClick={() => {
-                this.clickLinkInExtended("contactActive");
-                
-                this.clickHamberger();
-                this.link("contactActive"); 
-                
-              }}
-              className={`nav-link ${this.state.contactActive}`}
-              href="#contact"
-            >
-              Contact
-            </a> */
-}
-{
-  /* && */
-}
-{
-  /* this.state.extendMobileNav === true */
-}
