@@ -1,20 +1,18 @@
 .container-main-about {
-  margin-top: 6rem; 
+  margin-top: 6rem;
   min-height: 100vh;
   background-color: @dark-grey;
   border-bottom: 1px solid @eastern-blue;
   @media @tablet {
-    margin-top: 7rem; 
+    margin-top: 7rem;
   }
   @media @mobile {
-    margin-top: 8rem; 
+    margin-top: 8rem;
   }
   #about {
     padding: 5%;
-    height: 100vh;
     .container-main {
       background-color: @dark-grey;
-      height: 100%;
       padding-bottom: 2rem;
       h2 {
         color: @white;
@@ -23,8 +21,6 @@
       }
       .container-about {
         width: 100%;
-        height: 90%;
-        //   margin-bottom: 2rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -44,9 +40,14 @@
             margin: 2rem 0rem;
           }
           p {
+            font-size: 2rem;
             color: @white;
             text-align: center;
-            width: 80%;
+            width: 90%;
+            margin-bottom: 2rem;
+            span {
+              color: @orange;
+            }
           }
           @media @tablet {
             justify-content: space-evenly;
@@ -62,9 +63,8 @@
         }
         .container-skills {
           width: 49%;
-          //   height: auto;
           display: flex;
-          justify-content: space-evenly;
+          justify-content: flex-start;
           align-items: center;
           flex-direction: column;
           border: 1px solid @eastern-blue;
@@ -72,7 +72,7 @@
           background: @dark-slate;
           h3 {
             font-size: 3rem;
-            text-decoration: underline;
+            text-decoration: none;
             color: @white;
             @media @tablet {
               margin: 2rem 0rem;
@@ -80,34 +80,43 @@
             }
           }
           .container-skills-lists {
+            padding: 2rem 2rem;
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
-            ul {
-              margin: 2rem;
-              list-style-type: circle;
-              li {
-                margin-bottom: 2rem;
-                font-size: 1.8rem;
-                color: @white;
-                @media @mobile {
-                  font-size: 1.2rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            .container-skills-lists-sub {
+              h4 {
+                font-size: 2rem;
+                text-decoration: none;
+                color: @orange;
+              }
+              ul {
+                margin: 2rem;
+                li {
+                  margin-bottom: 2rem;
+                  font-size: 1.8rem;
+                  list-style-type: disc;
+                  color: @white;
                 }
               }
               @media @mobile {
-                margin: 1rem 0rem;
+                margin: 0 auto;
+                width: 40%;
               }
             }
             @media @tablet {
               justify-content: space-evenly;
-              width: 100%;
+            }
+            @media (max-width: 370px) {
+              flex-direction: column;
             }
           }
           @media @tablet {
             flex-direction: column;
             width: 100%;
             margin-top: 3rem;
-            // height:200rem;
           }
         }
       }

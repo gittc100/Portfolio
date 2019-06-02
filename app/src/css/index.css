@@ -718,11 +718,9 @@ textarea {
 }
 .container-main-about #about {
   padding: 5%;
-  height: 100vh;
 }
 .container-main-about #about .container-main {
   background-color: #272727;
-  height: 100%;
   padding-bottom: 2rem;
 }
 .container-main-about #about .container-main h2 {
@@ -732,7 +730,6 @@ textarea {
 }
 .container-main-about #about .container-main .container-about {
   width: 100%;
-  height: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -754,9 +751,14 @@ textarea {
   margin: 2rem 0rem;
 }
 .container-main-about #about .container-main .container-about .container-image p {
+  font-size: 2rem;
   color: #FFFFFF;
   text-align: center;
-  width: 80%;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+.container-main-about #about .container-main .container-about .container-image p span {
+  color: #f58a11;
 }
 @media (max-width: 900px) {
   .container-main-about #about .container-main .container-about .container-image {
@@ -774,7 +776,7 @@ textarea {
 .container-main-about #about .container-main .container-about .container-skills {
   width: 49%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   border: 1px solid #17A2B8;
@@ -783,7 +785,7 @@ textarea {
 }
 .container-main-about #about .container-main .container-about .container-skills h3 {
   font-size: 3rem;
-  text-decoration: underline;
+  text-decoration: none;
   color: #FFFFFF;
 }
 @media (max-width: 900px) {
@@ -793,33 +795,41 @@ textarea {
   }
 }
 .container-main-about #about .container-main .container-about .container-skills .container-skills-lists {
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.container-main-about #about .container-main .container-about .container-skills .container-skills-lists ul {
+.container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub h4 {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #f58a11;
+}
+.container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub ul {
   margin: 2rem;
-  list-style-type: circle;
 }
-.container-main-about #about .container-main .container-about .container-skills .container-skills-lists ul li {
+.container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub ul li {
   margin-bottom: 2rem;
   font-size: 1.8rem;
+  list-style-type: disc;
   color: #FFFFFF;
 }
 @media (max-width: 600px) {
-  .container-main-about #about .container-main .container-about .container-skills .container-skills-lists ul li {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 600px) {
-  .container-main-about #about .container-main .container-about .container-skills .container-skills-lists ul {
-    margin: 1rem 0rem;
+  .container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub {
+    margin: 0 auto;
+    width: 40%;
   }
 }
 @media (max-width: 900px) {
   .container-main-about #about .container-main .container-about .container-skills .container-skills-lists {
     justify-content: space-evenly;
-    width: 100%;
+  }
+}
+@media (max-width: 370px) {
+  .container-main-about #about .container-main .container-about .container-skills .container-skills-lists {
+    flex-direction: column;
   }
 }
 @media (max-width: 900px) {
