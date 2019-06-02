@@ -149,16 +149,16 @@ class Naviagtion extends Component {
                       /* var left = offsets.left; */
                     }
 
-                    {/* let div = document
+                    let div = document
                       .getElementById("home")
                       .getBoundingClientRect();
-                    let top = div.top; */}
-                    window.scrollTo(0,100);
-                    {/* window.scrollTo({
-                      top: 100,
+                    let top = div.top;
+                    {/* window.scrollTo(0,100); */}
+                    window.scrollTo({
+                      top: top,
                       left: 0,
                       behavior: "smooth"
-                    }); */}
+                    });
                     {/* 
                     TweenMax.to(window, 1, {
                       scrollTo: { top: "#about"},
