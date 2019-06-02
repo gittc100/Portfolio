@@ -11,7 +11,7 @@ import {
   Power4,
   Circ
 } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { scrollTo } from "gsap/ScrollToPlugin";
 class Naviagtion extends Component {
   constructor() {
     super();
@@ -153,11 +153,12 @@ class Naviagtion extends Component {
                       .getElementById("home")
                       .getBoundingClientRect();
                     let top = div.top; */}
-                    window.scrollTo({
+                    window.scrollTo(0,100);
+                    {/* window.scrollTo({
                       top: 100,
                       left: 0,
                       behavior: "smooth"
-                    });
+                    }); */}
                   }}
                   className={`nav-link ${this.state.homeActive}`}
                 >
@@ -168,7 +169,7 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("aboutActive");
                     TweenMax.to(window, 1, {
-                      scrollTo: { y: "#about" },
+                      scrollTo: { y: "#about" , autoKill:false},
                       ease: Power3.easeOut
                     });
                   }}
@@ -181,7 +182,7 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("projectsActive");
                     TweenMax.to(window, 1, {
-                      scrollTo: { y: "#projects", offsetY: 50 },
+                      scrollTo: { y: "#projects", offsetY: 50, autoKill:false },
                       ease: Power3.easeOut
                     });
                   }}
