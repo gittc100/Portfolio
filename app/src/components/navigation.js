@@ -159,11 +159,19 @@ class Naviagtion extends Component {
                       left: 0,
                       behavior: "smooth"
                     }); */}
+                    {/* 
+                    TweenMax.to(window, 1, {
+                      scrollTo: { top: "#about"},
+                      ease: Power3.easeOut
+                    }); 
+                    */}
                   }}
                   className={`nav-link ${this.state.homeActive}`}
                 >
                   Home
                 </button>
+
+                {/* TweenMax.to(window, 2, {scrollTo:{top: 400}}); */}
 
                 <button
                   onClick={() => {
