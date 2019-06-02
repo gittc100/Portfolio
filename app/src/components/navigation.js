@@ -38,28 +38,28 @@ class Naviagtion extends Component {
     let width = window.innerWidth;
     let divHomeTop =
       // document.getElementById("home").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
       window.pageYOffset;
     let divHomeBottom =
       // document.getElementById("home").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divAboutBottom =
       document.getElementById("about").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divProjectsBottom =
       document.getElementById("projects").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divContactBottom =
       document.getElementById("contact").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     this.setState({
       windowWidth: width,
       divHomeTop,
@@ -100,11 +100,8 @@ class Naviagtion extends Component {
     } = this.state;
     // if (divHomeTop <= currentLocation && divHomeBottom >= currentLocation) {
     //   this.link("homeActive");
-    // } 
-   if (
-      divAboutTop <= currentLocation &&
-      divAboutBottom >= currentLocation
-    ) {
+    // }
+    if (divAboutTop <= currentLocation && divAboutBottom >= currentLocation) {
       this.link("aboutActive");
     } else if (
       divProjectsTop <= currentLocation &&
@@ -123,28 +120,28 @@ class Naviagtion extends Component {
     let width = window.innerWidth;
     let divHomeTop =
       // document.getElementById("home").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
-      window.pageYOffset;
+      window.scrollY;
     let divHomeBottom =
       // document.getElementById("home").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divAboutBottom =
       document.getElementById("about").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divProjectsBottom =
       document.getElementById("projects").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     let divContactBottom =
       document.getElementById("contact").getBoundingClientRect().bottom +
-      window.pageYOffset;
+      window.scrollY;
     this.setState({
       windowWidth: width,
       divHomeTop,
@@ -156,6 +153,7 @@ class Naviagtion extends Component {
       divProjectsBottom,
       divContactBottom
     });
+    this.checkCurrentLocation();
   };
 
   clickHamberger = () => {
@@ -280,7 +278,7 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("contactActive");
                     window.scrollTo({
-                      top: this.state.divContactTop,
+                      top: this.state.divContactBottom,
                       left: 0,
                       behavior: "smooth"
                     });
@@ -339,7 +337,7 @@ class Naviagtion extends Component {
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
                 window.scrollTo({
-                  top: this.state.divContactTop,
+                  top: this.state.divContactBottom,
                   left: 0,
                   behavior: "smooth"
                 });
@@ -358,4 +356,3 @@ class Naviagtion extends Component {
 }
 
 export default Naviagtion;
-
