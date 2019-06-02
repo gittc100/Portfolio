@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import { TweenMax, TweenLite, Elastic, Power0, Power1, Power2, Power3, Power4, Circ} from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";﻿
-
-
+import { findDOMNode } from "react-dom";
+import {
+  TweenMax,
+  TweenLite,
+  Elastic,
+  Power0,
+  Power1,
+  Power2,
+  Power3,
+  Power4,
+  Circ
+} from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 class Naviagtion extends Component {
   constructor() {
     super();
@@ -13,7 +22,11 @@ class Naviagtion extends Component {
       contactActive: "link-inactive",
       hamActive: "ham-inactive",
       windowWidth: 0,
-      extendMobileNav: false
+      extendMobileNav: false,
+      homeRef: React.createRef(),
+      aboutRef: React.createRef(),
+      projectsRef: React.createRef(),
+      contactRef: React.createRef()
     };
   }
 
@@ -123,11 +136,27 @@ class Naviagtion extends Component {
             ) : (
               <>
                 <button
+                  ref={this.homeRef}
                   onClick={() => {
                     this.link("homeActive");
-                    TweenMax.to(window, 1, {
-                      scrollTo: { y: "#home", offsetY: 0 },
+                    {
+                      /* TweenMax.to(window.scrollTo(0, this.homeRef), 1, {
                       ease: Power3.easeOut
+                    }); */
+                    }
+
+                    {
+                      /* var left = offsets.left; */
+                    }
+
+                    {/* let div = document
+                      .getElementById("home")
+                      .getBoundingClientRect();
+                    let top = div.top; */}
+                    window.scrollTo({
+                      top: 100,
+                      left: 0,
+                      behavior: "smooth"
                     });
                   }}
                   className={`nav-link ${this.state.homeActive}`}
@@ -139,7 +168,7 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("aboutActive");
                     TweenMax.to(window, 1, {
-                      scrollTo: { y: "#about", offsetY: 50 },
+                      scrollTo: { y: "#about" },
                       ease: Power3.easeOut
                     });
                   }}
@@ -180,13 +209,29 @@ class Naviagtion extends Component {
 
         {this.state.windowWidth <= 600 ? (
           <div className="container-extended-nav">
-            <button
+            {/* <button
               onClick={() => {
                 this.clickLinkInExtended("homeActive");
-                TweenMax.to(window,1, {
+                TweenMax.to(window, 1, {
                   scrollTo: { y: "#home", offsetY: 50 },
                   ease: Power3.easeOut
                 });
+              }}
+              className={`nav-link ${this.state.homeActive}`}
+            >
+              Home
+            </button> */}
+            <button
+              ref={this.homeRef}
+              onClick={() => {
+                this.link("homeActive");
+                {
+                  /* TweenMax.to(window, 1, {
+                      scrollTo: { y: "#home", offsetY: 0 },
+                      ease: Power3.easeOut
+                    }); */
+                }
+                window.scrollTo(0, this.homeRef);
               }}
               className={`nav-link ${this.state.homeActive}`}
             >
@@ -226,9 +271,8 @@ class Naviagtion extends Component {
               }}
               className={`nav-link ${this.state.contactActive}`}
             >
-            Contact
+              Contact
             </button>
-  
           </div>
         ) : (
           <></>
@@ -330,7 +374,8 @@ export default Naviagtion;
               Projects
             </a> */
 }
-          {/* <a
+{
+  /* <a
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
                 
@@ -342,7 +387,8 @@ export default Naviagtion;
               href="#contact"
             >
               Contact
-            </a> */}
+            </a> */
+}
 {
   /* && */
 }
