@@ -5,10 +5,11 @@ let projects = [
   {
     id: 0,
     title: "M.O.O.D",
-    sub_title: `Built With: React.js, Redux.js, express.js, node.js, postgresSQL`,
+    sub_title: `React.js, Redux.js, express.js, node.js, postgresSQL`,
     description:
-      "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports. Built with ",
+      "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports.",
     domain_link: "https://moodbotics.com/",
+    gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
     photos: image
   },
   {
@@ -18,6 +19,7 @@ let projects = [
     description:
       "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports. Built with ",
     domain_link: "https://moodbotics.com/",
+    gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
     photos: image
   },
   {
@@ -27,9 +29,9 @@ let projects = [
     description:
       "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports. Built with ",
     domain_link: "https://moodbotics.com/",
+    gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
     photos: image
-  },
-  
+  }
 ];
 class Projects extends Component {
   render() {
@@ -45,16 +47,26 @@ class Projects extends Component {
                     <img src={item.photos} alt="not working" />
                     <div className="container-project-absolute">
                       <h3>{item.title}</h3>
-                      <h4>{item.sub_title}</h4>
+                      <h4>Stack:<br/>{item.sub_title}</h4>
                       <p>{item.description}</p>
-                      <button
-                        onClick={event => {
-                          event.preventDefault();
-                          window.open(item.domain_link);
-                        }}
-                      >
-                        Visit Site
-                      </button>
+                      <div>
+                        <button
+                          onClick={event => {
+                            event.preventDefault();
+                            window.open(item.domain_link);
+                          }}
+                        >
+                          Site
+                        </button>
+                        <button
+                          onClick={event => {
+                            event.preventDefault();
+                            window.open(item.gitrepo);
+                          }}
+                        >
+                          Repo
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );

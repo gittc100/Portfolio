@@ -56,7 +56,7 @@ class Footer extends Component {
             <i className="fab fa-github-square" />
             <p className={this.state.hoverGit}>GitHub</p>
           </div>
-          <div
+          {/* <div
             onMouseOver={() => this.hover("hoverTwitter")}
             onMouseOut={() => this.hover("hoverTwitter")}
             onClick={() =>
@@ -66,7 +66,7 @@ class Footer extends Component {
           >
             <i className="fab fa-twitter-square" />
             <p className={this.state.hoverTwitter}>Twitter</p>
-          </div>
+          </div> */}
         </div>
         <div>
           <p>THOMAS CLAYDON ©2019</p>

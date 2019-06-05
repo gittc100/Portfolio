@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { findDOMNode } from "react-dom";
 import {
   TweenMax,
   TweenLite,
@@ -11,7 +10,7 @@ import {
   Power4,
   Circ
 } from "gsap";
-import { scrollTo } from "gsap/ScrollToPlugin";
+
 class Naviagtion extends Component {
   constructor() {
     super();
@@ -75,15 +74,6 @@ class Naviagtion extends Component {
     window.addEventListener("scroll", () => this.checkCurrentLocation());
   }
 
-  // componentDidUpdate(prevProps, prevState){
-  //   let width = window.innerWidth;
-  //   console.log(width);
-  //   if(prevState.windowWidth !== width){
-  //     this.setState({
-  //       windowWidth: width
-  //     });
-  //   }
-  // }
   checkCurrentLocation = () => {
     console.log("scrolling");
     let currentLocation = window.scrollY;
@@ -233,19 +223,6 @@ class Naviagtion extends Component {
               </div>
             ) : (
               <>
-                {/* <button
-                  onClick={() => {
-                    this.link("homeActive");
-                    window.scrollTo({
-                      top: this.state.divHomeTop,
-                      left: 0,
-                      behavior: "smooth"
-                    });
-                  }}
-                  className={`nav-link ${this.state.homeActive}`}
-                >
-                  Home
-                </button> */}
                 <button
                   onClick={() => {
                     this.link("aboutActive");
@@ -294,19 +271,6 @@ class Naviagtion extends Component {
 
         {this.state.windowWidth <= 600 ? (
           <div className="container-extended-nav">
-            {/* <button
-              onClick={() => {
-                this.clickLinkInExtended("homeActive");
-                window.scrollTo({
-                  top: this.state.divHomeTop,
-                  left: 0,
-                  behavior: "smooth"
-                });
-              }}
-              className={`nav-link ${this.state.homeActive}`}
-            >
-              Home
-            </button> */}
             <button
               onClick={() => {
                 this.clickLinkInExtended("aboutActive");

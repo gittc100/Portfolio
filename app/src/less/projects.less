@@ -1,12 +1,14 @@
-
 .container-main-projects {
   min-height: 100vh;
   background-color: @dark-grey;
-  border-bottom: 1px solid @eastern-blue;
+  // border-bottom: 1px solid @eastern-blue;
   #projects {
-    padding: 5%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
     .container-main {
       background-color: @dark-grey;
+      width: 80%;
       h2 {
         color: @white;
         text-align: center;
@@ -25,7 +27,7 @@
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
-          border: 1px solid @eastern-blue;
+          border: 1px solid transparent;
           border-radius: 1rem;
           width: 49%;
           // height: calc(width * 1.72);
@@ -46,21 +48,58 @@
             display: none;
             color: @white;
             text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
             width: 80%;
+            @media (max-width: 1100px) {
+              font-size: 1.8rem;
+            }
+            @media @tablet {
+              font-size: 1.8rem;
+            }
+            @media (max-width: 700px) {
+              font-size: 2.2rem;
+            }
+            @media @mobile {
+              font-size: 2.2rem;
+            }
+            @media (max-width: 450px) {
+              font-size: 1.4rem;
+              margin-bottom: 0.5rem;
+            }
           }
           h4 {
             transition-duration: 1s;
             display: none;
             color: @white;
             text-align: center;
-            font-size: 2.0rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             padding-bottom: 0;
             width: 80%;
             text-align: left;
+            line-height: 2rem;
+            @media (max-width: 1100px) {
+              font-size: 1.2rem;
+              line-height: 1.4rem;
+            }
+            @media @tablet {
+              font-size: 1.2rem;
+              line-height: 1.4rem;
+            }
+            @media (max-width: 700px) {
+              font-size: 1.8rem;
+              line-height: 2rem;
+            }
+            @media @mobile {
+              font-size: 1.8rem;
+              line-height: 2rem;
+            }
+            @media (max-width: 450px) {
+              font-size: 1.3rem;
+              line-height: 1.2rem;
+            }
           }
           p {
             transition-duration: 1s;
@@ -68,109 +107,79 @@
             color: @white;
             text-align: left;
             font-size: 1.6rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             padding-bottom: 0;
             width: 80%;
+            @media (max-width: 1100px) {
+              font-size: 1.2rem;
+            }
+            @media @tablet {
+              font-size: 1.2rem;
+            }
+            @media (max-width: 700px) {
+              font-size: 1.6rem;
+            }
+            @media @mobile {
+              font-size: 1.6rem;
+            }
+            @media (max-width: 450px) {
+              font-size: 1.2rem;
+            }
           }
-          button {
-            transition-duration: 1s;
-            display: none;
-            cursor: pointer;
-            font-size: 2rem;
-            padding: 1rem;
-            color: @white;
-            background-color: @eastern-blue;
-            border: 1px solid @dark-slate;
-            border-radius: 0.5rem;
+          div {
+            display: flex;
             width: 80%;
-            height: auto;
-            margin-bottom: 2rem;
-          }
-          button:hover {
-            font-size: 2rem;
-            padding: 1rem;
-            color: @dark-slate;
-            background-color: @orange;
-            border: 1px solid @dark-slate;
-            border-radius: 0.5rem;
-          }
-          @media @tablet {
-            width: 49%;
-            // width: 100%;
-            h3 {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-              margin-top: 1rem;
-            }
-            h4 {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-            }
-            p {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-            }
+            justify-content: space-between;
             button {
-              font-size: 1.2rem;
+              transition-duration: 1s;
+              display: none;
+              cursor: pointer;
+              font-size: 1.6rem;
               padding: 1rem;
-              margin-bottom: 1rem;
+              color: @white;
+              background-color: @eastern-blue;
+              border: 1px solid @dark-slate;
+              border-radius: 0.5rem;
+              width: 45%;
+              height: auto;
+              margin-bottom: 2rem;
+              @media (max-width: 1100px) {
+                font-size: 1.2rem;
+              }
+              @media @tablet {
+                font-size: 1.2rem;
+              }
+              @media (max-width: 700px) {
+                font-size: 1.6rem;
+              }
+              @media @mobile {
+                font-size: 1.6rem;
+              }
+              @media (max-width: 450px) {
+                font-size: 1.2rem;
+              }
             }
             button:hover {
-              font-size: 1.2rem;
-              padding: 1rem;
+              color: @dark-slate;
+              background-color: @orange;
+              border: 1px solid @dark-slate;
+              border-radius: 0.5rem;
             }
+          }
+          // @media @tablet {
+          //   width: 49%;
+          // }
+          @media (max-width: 700px) {
+            width: 100%;
           }
           @media @mobile {
             width: 100%;
-            h3 {
-              font-size: 2rem;
-              margin-bottom: 1rem;
-              margin-top: 1rem;
-            }
-            h4 {
-              font-size: 1.6rem;
-              margin-bottom: 1rem;
-            }
-            p {
-              font-size: 1.6rem;
-              margin-bottom: 1rem;
-            }
-            button {
-              font-size: 1.6rem;
-              padding: 1rem;
-              margin-bottom: 1rem;
-            }
-            button:hover {
-              font-size: 1.6rem;
-              padding: 1rem;
-            }
           }
           @media (max-width: 400px) {
             width: 100%;
-            h3 {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-              margin-top: 1rem;
-            }
-            h4 {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-            }
-            p {
-              font-size: 1.2rem;
-              margin-bottom: 1rem;
-            }
-            button {
-              font-size: 1.2rem;
-              padding: 1rem;
-              margin-bottom: 1rem;
-            }
-            button:hover {
-              font-size: 1.2rem;
-              padding: 1rem;
-            }
           }
         }
+
       }
       .container-project:hover {
         cursor: pointer;
@@ -204,6 +213,9 @@
             display: initial;
           }
         }
+      }
+      @media @tablet {
+        width: 100%;
       }
     }
   }
