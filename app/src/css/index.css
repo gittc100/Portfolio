@@ -877,22 +877,28 @@ textarea {
 }
 .container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub .container-skills-lists-sub2 .container-skills-lists-imgdiv {
   width: 9rem;
+  height: 9rem;
   margin: 1rem 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 .container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub .container-skills-lists-sub2 .container-skills-lists-imgdiv p {
   padding: 0;
+  font-size: 2rem;
   color: #FFFFFF;
 }
 @media (max-width: 900px) {
   .container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub .container-skills-lists-sub2 .container-skills-lists-imgdiv {
     width: 7rem;
+    height: 7rem;
   }
 }
 @media (max-width: 600px) {
   .container-main-about #about .container-main .container-about .container-skills .container-skills-lists .container-skills-lists-sub .container-skills-lists-sub2 .container-skills-lists-imgdiv {
     width: 5rem;
+    height: 5rem;
   }
 }
 @media (max-width: 900px) {

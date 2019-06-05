@@ -110,20 +110,26 @@
                 flex-wrap: wrap;
                 .container-skills-lists-imgdiv {
                   width: 9rem;
+                  height: 9rem;
                   margin: 1rem 1rem;
-                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  // text-align: center;
+                  // vertical-align: center;
                   cursor: pointer;
-                  // display: flex;
-                  // justify-content: center;
                   p {
                     padding: 0;
+                    font-size: 2rem;
                     color: @white;
                   }
                   @media @tablet {
                     width: 7rem;
+                    height: 7rem;
                   }
                   @media @mobile {
                     width: 5rem;
+                    height: 5rem;
                   }
                 }
               }
