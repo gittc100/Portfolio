@@ -35,9 +35,6 @@ class Naviagtion extends Component {
 
   componentDidMount() {
     let width = window.innerWidth;
-    // let divHomeTop =
-    //   document.getElementById("home").getBoundingClientRect().top +
-    //   window.pageYOffset;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
       window.pageYOffset;
@@ -47,9 +44,6 @@ class Naviagtion extends Component {
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
       window.pageYOffset;
-    // let divHomeBottom =
-    //   document.getElementById("home").getBoundingClientRect().bottom +
-    //   window.pageYOffset;
     let divAboutBottom =
       document.getElementById("about").getBoundingClientRect().bottom +
       window.pageYOffset;
@@ -61,11 +55,9 @@ class Naviagtion extends Component {
       window.pageYOffset;
     this.setState({
       windowWidth: width,
-      // divHomeTop,
       divAboutTop,
       divProjectsTop,
       divContactTop,
-      // divHomeBottom,
       divAboutBottom,
       divProjectsBottom,
       divContactBottom
@@ -76,17 +68,34 @@ class Naviagtion extends Component {
 
   checkCurrentLocation = () => {
     console.log("scrolling");
-    let currentLocation = window.pageYOffset;
-    let {
-      divHomeTop,
-      divHomeBottom,
+    let currentLocation = window.pageYOffset + window.screen.height/2;
+    let divAboutTop =
+      document.getElementById("about").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divProjectsTop =
+      document.getElementById("projects").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divContactTop =
+      document.getElementById("contact").getBoundingClientRect().top +
+      window.pageYOffset;
+    let divAboutBottom =
+      document.getElementById("about").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divProjectsBottom =
+      document.getElementById("projects").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    let divContactBottom =
+      document.getElementById("contact").getBoundingClientRect().bottom +
+      window.pageYOffset;
+    this.setState({
       divAboutTop,
-      divAboutBottom,
       divProjectsTop,
-      divProjectsBottom,
       divContactTop,
+      divAboutBottom,
+      divProjectsBottom,
       divContactBottom
-    } = this.state;
+    });
+
     console.log("currentLocation", currentLocation);
     console.log("divAboutTop", divAboutTop);
     console.log("divAboutBottom", divAboutBottom);
