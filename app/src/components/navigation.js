@@ -35,40 +35,43 @@ class Naviagtion extends Component {
 
   componentDidMount() {
     let width = window.innerWidth;
-    let divAboutTop =
-      document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset;
-    let divProjectsTop =
-      document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset;
-    let divContactTop =
-      document.getElementById("contact").getBoundingClientRect().top +
-      window.pageYOffset;
-    let divAboutBottom =
-      document.getElementById("about").getBoundingClientRect().bottom +
-      window.pageYOffset;
-    let divProjectsBottom =
-      document.getElementById("projects").getBoundingClientRect().bottom +
-      window.pageYOffset;
-    let divContactBottom =
-      document.getElementById("contact").getBoundingClientRect().bottom +
-      window.pageYOffset;
+    // let divAboutTop =
+    //   document.getElementById("about").getBoundingClientRect().top +
+    //   window.pageYOffset;
+    // let divProjectsTop =
+    //   document.getElementById("projects").getBoundingClientRect().top +
+    //   window.pageYOffset;
+    // let divContactTop =
+    //   document.getElementById("contact").getBoundingClientRect().top +
+    //   window.pageYOffset;
+    // let divAboutBottom =
+    //   document.getElementById("about").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
+    // let divProjectsBottom =
+    //   document.getElementById("projects").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
+    // let divContactBottom =
+    //   document.getElementById("contact").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
     this.setState({
-      windowWidth: width,
-      divAboutTop,
-      divProjectsTop,
-      divContactTop,
-      divAboutBottom,
-      divProjectsBottom,
-      divContactBottom
+      windowWidth: width
+      // divAboutTop,
+      // divProjectsTop,
+      // divContactTop,
+      // divAboutBottom,
+      // divProjectsBottom,
+      // divContactBottom
     });
     window.addEventListener("resize", () => this.updateWidth());
     window.addEventListener("scroll", () => this.checkCurrentLocation());
+    setTimeout(() => {
+      this.checkCurrentLocation();
+    }, 500);
   }
 
   checkCurrentLocation = () => {
     console.log("scrolling");
-    let currentLocation = window.pageYOffset + window.screen.height/2;
+    let currentLocation = window.pageYOffset + window.screen.height / 2;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
       window.pageYOffset;
@@ -123,40 +126,40 @@ class Naviagtion extends Component {
 
   updateWidth = () => {
     let width = window.innerWidth;
-    // let divHomeTop =
-    //   document.getElementById("home").getBoundingClientRect().top +
+    // // let divHomeTop =
+    // //   document.getElementById("home").getBoundingClientRect().top +
+    // //   window.pageYOffset;
+    // let divAboutTop =
+    //   document.getElementById("about").getBoundingClientRect().top +
     //   window.pageYOffset;
-    let divAboutTop =
-      document.getElementById("about").getBoundingClientRect().top +
-      window.pageYOffset;
-    let divProjectsTop =
-      document.getElementById("projects").getBoundingClientRect().top +
-      window.pageYOffset;
-    let divContactTop =
-      document.getElementById("contact").getBoundingClientRect().top +
-      window.pageYOffset;
-    // let divHomeBottom =
-    //   document.getElementById("home").getBoundingClientRect().bottom +
+    // let divProjectsTop =
+    //   document.getElementById("projects").getBoundingClientRect().top +
     //   window.pageYOffset;
-    let divAboutBottom =
-      document.getElementById("about").getBoundingClientRect().bottom +
-      window.pageYOffset;
-    let divProjectsBottom =
-      document.getElementById("projects").getBoundingClientRect().bottom +
-      window.pageYOffset;
-    let divContactBottom =
-      document.getElementById("contact").getBoundingClientRect().bottom +
-      window.pageYOffset;
+    // let divContactTop =
+    //   document.getElementById("contact").getBoundingClientRect().top +
+    //   window.pageYOffset;
+    // // let divHomeBottom =
+    // //   document.getElementById("home").getBoundingClientRect().bottom +
+    // //   window.pageYOffset;
+    // let divAboutBottom =
+    //   document.getElementById("about").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
+    // let divProjectsBottom =
+    //   document.getElementById("projects").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
+    // let divContactBottom =
+    //   document.getElementById("contact").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
     this.setState({
-      windowWidth: width,
+      windowWidth: width
       // divHomeTop,
-      divAboutTop,
-      divProjectsTop,
-      divContactTop,
-      // divHomeBottom,
-      divAboutBottom,
-      divProjectsBottom,
-      divContactBottom
+      // divAboutTop,
+      // divProjectsTop,
+      // divContactTop,
+      // // divHomeBottom,
+      // divAboutBottom,
+      // divProjectsBottom,
+      // divContactBottom
     });
     this.checkCurrentLocation();
   };
