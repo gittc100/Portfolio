@@ -22,11 +22,11 @@ class Naviagtion extends Component {
       hamActive: "ham-inactive",
       windowWidth: 0,
       extendMobileNav: false,
-      divHomeTop: 0,
+      // divHomeTop: 0,
       divAboutTop: 0,
       divProjectsTop: 0,
       divContactTop: 0,
-      divHomeBottom: 0,
+      // divHomeBottom: 0,
       divAboutBottom: 0,
       divProjectsBottom: 0,
       divContactBottom: 0
@@ -35,37 +35,37 @@ class Naviagtion extends Component {
 
   componentDidMount() {
     let width = window.innerWidth;
-    let divHomeTop =
-      // document.getElementById("home").getBoundingClientRect().top +
-      window.scrollY;
+    // let divHomeTop =
+    //   document.getElementById("home").getBoundingClientRect().top +
+    //   window.pageYOffset;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.scrollY;
+      window.pageYOffset;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.scrollY;
+      window.pageYOffset;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
       window.pageYOffset;
-    let divHomeBottom =
-      // document.getElementById("home").getBoundingClientRect().bottom +
-      window.scrollY;
+    // let divHomeBottom =
+    //   document.getElementById("home").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
     let divAboutBottom =
       document.getElementById("about").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     let divProjectsBottom =
       document.getElementById("projects").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     let divContactBottom =
       document.getElementById("contact").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     this.setState({
       windowWidth: width,
-      divHomeTop,
+      // divHomeTop,
       divAboutTop,
       divProjectsTop,
       divContactTop,
-      divHomeBottom,
+      // divHomeBottom,
       divAboutBottom,
       divProjectsBottom,
       divContactBottom
@@ -76,8 +76,7 @@ class Naviagtion extends Component {
 
   checkCurrentLocation = () => {
     console.log("scrolling");
-    let currentLocation = window.scrollY;
-    console.log(currentLocation);
+    let currentLocation = window.pageYOffset;
     let {
       divHomeTop,
       divHomeBottom,
@@ -88,6 +87,13 @@ class Naviagtion extends Component {
       divContactTop,
       divContactBottom
     } = this.state;
+    console.log("currentLocation", currentLocation);
+    console.log("divAboutTop", divAboutTop);
+    console.log("divAboutBottom", divAboutBottom);
+    console.log("divProjectsTop", divProjectsTop);
+    console.log("divProjectsBottom", divProjectsBottom);
+    console.log("divContactTop", divContactTop);
+    console.log("divContactBottom", divContactBottom);
     // if (divHomeTop <= currentLocation && divHomeBottom >= currentLocation) {
     //   this.link("homeActive");
     // }
@@ -108,37 +114,37 @@ class Naviagtion extends Component {
 
   updateWidth = () => {
     let width = window.innerWidth;
-    let divHomeTop =
-      // document.getElementById("home").getBoundingClientRect().top +
-      window.scrollY;
+    // let divHomeTop =
+    //   document.getElementById("home").getBoundingClientRect().top +
+    //   window.pageYOffset;
     let divAboutTop =
       document.getElementById("about").getBoundingClientRect().top +
-      window.scrollY;
+      window.pageYOffset;
     let divProjectsTop =
       document.getElementById("projects").getBoundingClientRect().top +
-      window.scrollY;
+      window.pageYOffset;
     let divContactTop =
       document.getElementById("contact").getBoundingClientRect().top +
-      window.scrollY;
-    let divHomeBottom =
-      // document.getElementById("home").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
+    // let divHomeBottom =
+    //   document.getElementById("home").getBoundingClientRect().bottom +
+    //   window.pageYOffset;
     let divAboutBottom =
       document.getElementById("about").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     let divProjectsBottom =
       document.getElementById("projects").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     let divContactBottom =
       document.getElementById("contact").getBoundingClientRect().bottom +
-      window.scrollY;
+      window.pageYOffset;
     this.setState({
       windowWidth: width,
-      divHomeTop,
+      // divHomeTop,
       divAboutTop,
       divProjectsTop,
       divContactTop,
-      divHomeBottom,
+      // divHomeBottom,
       divAboutBottom,
       divProjectsBottom,
       divContactBottom
@@ -255,7 +261,7 @@ class Naviagtion extends Component {
                   onClick={() => {
                     this.link("contactActive");
                     window.scrollTo({
-                      top: this.state.divContactBottom,
+                      top: this.state.divContactTop,
                       left: 0,
                       behavior: "smooth"
                     });
@@ -301,7 +307,7 @@ class Naviagtion extends Component {
               onClick={() => {
                 this.clickLinkInExtended("contactActive");
                 window.scrollTo({
-                  top: this.state.divContactBottom,
+                  top: this.state.divContactTop,
                   left: 0,
                   behavior: "smooth"
                 });

@@ -532,14 +532,14 @@ textarea {
   overflow: hidden;
 }
 .container-main-projects #projects .container-main .container-projects .container-project img {
-  z-index: 1;
+  z-index: 0;
   transition-duration: 1s;
   width: 100%;
   height: auto;
   border-radius: 1rem;
 }
 .container-main-projects #projects .container-main .container-projects .container-project .tap-here {
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -552,7 +552,7 @@ textarea {
 }
 .container-main-projects #projects .container-main .container-projects .container-project .tap-here p {
   font-size: 2rem;
-  z-index: 2;
+  z-index: 0;
   text-align: center;
   width: 30%;
   margin: 0;
@@ -760,7 +760,7 @@ textarea {
   opacity: 0;
 }
 .container-main-projects #projects .container-main .container-project:hover .container-project-absolute {
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
