@@ -47,6 +47,7 @@ class Projects extends Component {
                     <img src={item.photos} alt="not working" />
                     <div className="container-project-absolute">
                       <h3>{item.title}</h3>
+                      <div className="tap-here"><p>TAP</p></div>
                       <h4>Stack:<br/>{item.sub_title}</h4>
                       <p>{item.description}</p>
                       <div>

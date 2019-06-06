@@ -10,7 +10,8 @@ class Contact extends Component {
       name: "",
       email: "",
       subject: "",
-      description: ""
+      description: "",
+      contactSpinner: false
     };
   }
 
@@ -29,6 +30,7 @@ class Contact extends Component {
 
   handleChange = event => {
     this.setState({
+      ...this.state,
       [event.target.name]: event.target.value
     });
   };
@@ -46,19 +48,40 @@ class Contact extends Component {
       email: this.state.email,
       description: this.state.description
     };
-    axios.post("https://tom-mailer.herokuapp.com/send", body).then(res => {
-      if (res.data == "sent") {
-        alert("Your Email Was Received, Thank You!");
-        this.setState({
-          name: "",
-          email: "",
-          subject: "",
-          description: ""
-        });
-      } else if (res.data == "error") {
-        alert("Your Email Was Not Received, Try again");
-      }
-    });
+    if (
+      body.subject === "" ||
+      body.name === "" ||
+      body.email === "" ||
+      body.description === ""
+    ) {
+      alert(
+        "Contact Form is Incomplete, please complete the form and submit again."
+      );
+    } else {
+      this.setState({
+        ...this.state,
+        contactSpinner: !this.state.contactSpinner
+      });
+      axios.post("https://tom-mailer.herokuapp.com/send", body).then(res => {
+        if (res.data == "sent") {
+          alert("Your Email Was Received, Thank You!");
+          this.setState({
+            ...this.state,
+            name: "",
+            email: "",
+            subject: "",
+            description: "",
+            contactSpinner: !this.state.contactSpinner
+          });
+        } else if (res.data == "error") {
+          this.setState({
+            ...this.state,
+            contactSpinner: !this.state.contactSpinner
+          });
+          alert("Your Email Was Not Received, Try again");
+        }
+      });
+    }
   };
 
   render() {
@@ -100,7 +123,7 @@ class Contact extends Component {
                 placeholder="Description"
                 value={this.state["description"]}
               />
-              <button type="submit">Submit</button>
+              <button type="submit">{this.state.contactSpinner?"Sending Message ...":"Submit"}</button>
             </form>
           </div>
         </section>
