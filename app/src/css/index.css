@@ -845,7 +845,7 @@ textarea {
 .container-main-about #about .container-main .container-about .container-image p {
   font-size: 2rem;
   color: #FFFFFF;
-  text-align: center;
+  text-align: left;
   width: 90%;
   margin: 2rem;
 }

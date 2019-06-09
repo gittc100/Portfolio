@@ -11,26 +11,6 @@ let projects = [
     domain_link: "https://moodbotics.com/",
     gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
     photos: image
-  },
-  {
-    id: 1,
-    title: "M.O.O.D",
-    sub_title: `Built With: React.js, Redux.js, express.js, node.js, postgresSQL`,
-    description:
-      "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports. Built with ",
-    domain_link: "https://moodbotics.com/",
-    gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
-    photos: image
-  },
-  {
-    id: 2,
-    title: "M.O.O.D",
-    sub_title: `Built With: React.js, Redux.js, express.js, node.js, postgresSQL`,
-    description:
-      "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports. Built with ",
-    domain_link: "https://moodbotics.com/",
-    gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
-    photos: image
   }
 ];
 class Projects extends Component {
