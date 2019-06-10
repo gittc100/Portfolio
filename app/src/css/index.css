@@ -459,11 +459,15 @@ textarea {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .container-main-footer .links-container .social-link i {
   font-size: 6rem;
+}
+.container-main-footer .links-container .social-link i.fas,
+.container-main-footer .links-container .social-link i.fa-file {
+  font-size: 5rem;
 }
 .container-main-footer .links-container .social-link p {
   display: none;

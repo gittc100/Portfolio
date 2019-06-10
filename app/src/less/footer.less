@@ -19,16 +19,21 @@
     flex-direction: row;
     justify-content: space-between;
     width: 20rem;
+    // height: 20rem;
     .social-link {
       transition-duration: 1s;
       color: @eastern-blue;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       i {
         font-size: 6rem;
+        
+      }
+      i.fas, i.fa-file{
+        font-size: 5rem;
       }
       p {
         display: none;
@@ -40,6 +45,7 @@
       color: @orange;
       i {
         font-size: 3rem;
+        
       }
       p {
         display: block;

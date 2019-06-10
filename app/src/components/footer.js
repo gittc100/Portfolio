@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import resume from "../resume/Thomas_Claydon_Creddle.pdf";
 import {
   TweenMax,
   TweenLite,
@@ -16,9 +17,13 @@ class Footer extends Component {
     this.state = {
       hoverLinkedIn: "hover-off",
       hoverGit: "hover-off",
-      hoverTwitter: "hover-off"
+      hoverRes: "hover-off"
     };
   }
+
+  onClickRes = url => {
+    window.location.href = resume;
+  };
 
   onClickLink = url => {
     window.open(url);
@@ -56,17 +61,15 @@ class Footer extends Component {
             <i className="fab fa-github-square" />
             <p className={this.state.hoverGit}>GitHub</p>
           </div>
-          {/* <div
-            onMouseOver={() => this.hover("hoverTwitter")}
-            onMouseOut={() => this.hover("hoverTwitter")}
-            onClick={() =>
-              this.onClickLink("https://twitter.com/ThomasClaydon1")
-            }
+          <div
+            onMouseOver={() => this.hover("hoverRes")}
+            onMouseOut={() => this.hover("hoverRes")}
+            onClick={() => this.onClickRes()}
             className="social-link"
           >
-            <i className="fab fa-twitter-square" />
-            <p className={this.state.hoverTwitter}>Twitter</p>
-          </div> */}
+            <i className="fas fa-file" />
+            <p className={this.state.hoverRes}>Resume</p>
+          </div>
         </div>
         <div>
           <p>THOMAS CLAYDON ©2019</p>
