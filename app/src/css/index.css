@@ -437,7 +437,7 @@ textarea {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 20rem;
+  height: 17.5rem;
   background-color: #1b242f;
 }
 .container-main-footer p {
@@ -467,25 +467,19 @@ textarea {
 }
 .container-main-footer .links-container .social-link i.fas,
 .container-main-footer .links-container .social-link i.fa-file {
-  font-size: 5rem;
+  font-size: 5.25rem;
 }
 .container-main-footer .links-container .social-link p {
-  display: none;
-  color: white;
+  text-align: center;
+  color: transparent;
+  font-size: 1.6rem;
+  padding: 0;
   transition-duration: 1s;
 }
 .container-main-footer .links-container .social-link:hover {
   color: #f58a11;
 }
-.container-main-footer .links-container .social-link:hover i {
-  font-size: 3rem;
-}
 .container-main-footer .links-container .social-link:hover p {
-  display: block;
-  text-align: center;
-  font-size: 1.6rem;
-  margin: 0;
-  padding: 0;
   color: #f58a11;
 }
 .container-main-home #home {
