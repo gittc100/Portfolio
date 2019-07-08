@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import resume from "../resume/Thomas_Claydon_Creddle.pdf";
+import resume from "../resume/Thomas_Claydon_Resume.pdf";
 import {
   TweenMax,
   TweenLite,
