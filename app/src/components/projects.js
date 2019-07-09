@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import image from "../imgs/mood.jpg";
+import moodImage from "../imgs/mood.jpg";
+import notesImage from "../imgs/note.jpg";
 
 let projects = [
   {
@@ -10,7 +11,17 @@ let projects = [
       "Moodbot is an app that helps project managers keep track of team morale during a team’s lifecycle. It provides the manager with the ability to send slack surveys to team members, record responses and display reports.",
     domain_link: "https://moodbotics.com/",
     gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
-    photos: image
+    photos: moodImage
+  },
+  {
+    id: 1,
+    title: "Community Notes",
+    sub_title: `CSS, React.js, Redux.js`,
+    description:
+      "Community Notes is a collective message board allowing users to post and view notes.",
+    domain_link: "https://www.community-notes.com/",
+    gitrepo: "https://github.com/gittc100/front-end-project-week",
+    photos: notesImage
   }
 ];
 class Projects extends Component {
