@@ -44,7 +44,7 @@ class About extends Component {
                   <span>9+ years</span> in the construction industry as Laborer,
                   Drafter, and Manager. I desire to get involved with an agile
                   team focused on continuous improvement and personal
-                  developement. My current experience is in Full-Satck Web developement with the desire to expand further into other feilds of software engineering. I would be greatful to work in any position/industry.
+                  developement. My current experience is in Full-Satck Web developement with the desire to expand further into other feilds of software engineering. 
                 </p>
               </div>
               <div className="container-skills">
