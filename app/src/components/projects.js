@@ -14,16 +14,16 @@ let projects = [
     gitrepo: "https://github.com/Lambda-School-Labs/labs10-sentiment",
     photos: moodImage
   },
-  // {
-  //   id: 1,
-  //   title: "One Line A Day",
-  //   sub_title: `LESS, React.js, Redux.js, express.js, node.js, postgresSQL`,
-  //   description:
-  //     "One Line a Day is a personal journal allowing the user to create, view and edit a single entry per day in a span of ten years.",
-  //   domain_link: "https://www.one-line-a-day.com/",
-  //   gitrepo: "https://github.com/gittc100/One_Line_A_Day_Thomas_Front_End",
-  //   photos: lineImage
-  // },
+  {
+    id: 1,
+    title: "One Line A Day",
+    sub_title: `LESS, React.js, Redux.js, express.js, node.js, postgresSQL`,
+    description:
+      "One Line a Day is a personal journal allowing the user to create, view and edit a single entry per day in a span of ten years.",
+    domain_link: "https://www.one-line-a-day.com/",
+    gitrepo: "https://github.com/gittc100/One_Line_A_Day_Thomas_Front_End",
+    photos: lineImage
+  },
   {
     id: 2,
     title: "Community Notes",

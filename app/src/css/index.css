@@ -578,7 +578,7 @@ textarea {
   display: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   width: 80%;
@@ -660,6 +660,21 @@ textarea {
   margin-bottom: 1rem;
   padding-bottom: 0;
   width: 80%;
+}
+@media (max-width: 1700px) {
+  .container-main-projects #projects .container-main .container-projects .container-project p {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1300px) {
+  .container-main-projects #projects .container-main .container-projects .container-project p {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 1100px) {
   .container-main-projects #projects .container-main .container-projects .container-project p {
