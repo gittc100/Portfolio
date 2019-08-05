@@ -512,296 +512,152 @@ textarea {
 .container-main-projects #projects .container-main .container-projects {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .container-main-projects #projects .container-main .container-projects .container-project {
-  transition-duration: 1s;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  width: 100%;
+  padding: 3rem;
   border: 1px solid transparent;
   border-radius: 1rem;
-  width: 49%;
   margin-bottom: 1.6rem;
   background-color: #1b242f;
-  overflow: hidden;
 }
-.container-main-projects #projects .container-main .container-projects .container-project img {
-  z-index: 0;
-  transition-duration: 1s;
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title img {
+  z-index: 0;
+  width: 7rem;
+  height: 7rem;
   border-radius: 1rem;
   background-color: #FFFFFF;
 }
-.container-main-projects #projects .container-main .container-projects .container-project .tap-here {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.container-main-projects #projects .container-main .container-projects .container-project .tap-here p {
-  font-size: 2rem;
-  z-index: 0;
-  text-align: center;
-  width: 30%;
-  margin: 0;
-  padding: 1rem;
-  display: none;
-  color: #1b242f;
-  font-weight: bold;
-  border: 2px solid #1b242f;
-  border-radius: 2rem;
-  background: #17A2B8;
-  opacity: 0.4;
-}
-@media (max-width: 900px) {
-  .container-main-projects #projects .container-main .container-projects .container-project .tap-here {
-    display: flex;
-  }
-  .container-main-projects #projects .container-main .container-projects .container-project .tap-here p {
-    display: initial;
+@media (max-width: 600px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title img {
+    width: 5rem;
+    height: 5rem;
   }
 }
-.container-main-projects #projects .container-main .container-projects .container-project h3 {
-  transition-duration: 1s;
-  display: none;
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
   color: #FFFFFF;
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  width: 80%;
-}
-@media (max-width: 1100px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h3 {
-    font-size: 1.8rem;
-  }
+  width: 100%;
 }
 @media (max-width: 900px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h3 {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h3 {
-    font-size: 2.2rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
+    font-size: 3rem;
   }
 }
 @media (max-width: 600px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h3 {
-    font-size: 2.2rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
+    font-size: 3rem;
   }
 }
-@media (max-width: 450px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
+  width: 7rem;
+}
+@media (max-width: 600px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
+    width: 5rem;
   }
 }
-.container-main-projects #projects .container-main .container-projects .container-project h4 {
-  transition-duration: 1s;
-  display: none;
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute h4 {
   color: #FFFFFF;
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
   padding-bottom: 0;
-  width: 80%;
+  width: 100%;
   text-align: left;
-  line-height: 2rem;
-}
-@media (max-width: 1100px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h4 {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
+  line-height: 2.8rem;
 }
 @media (max-width: 900px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h4 {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
-}
-@media (max-width: 700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h4 {
-    font-size: 1.8rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute h4 {
+    font-size: 2rem;
     line-height: 2rem;
   }
 }
 @media (max-width: 600px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h4 {
-    font-size: 1.8rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute h4 {
+    font-size: 2rem;
     line-height: 2rem;
   }
 }
-@media (max-width: 450px) {
-  .container-main-projects #projects .container-main .container-projects .container-project h4 {
-    font-size: 1.3rem;
-    line-height: 1.2rem;
-  }
-}
-.container-main-projects #projects .container-main .container-projects .container-project p {
-  transition-duration: 1s;
-  display: none;
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
   color: #FFFFFF;
   text-align: left;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
   padding-bottom: 0;
-  width: 80%;
+  width: 100%;
 }
-@media (max-width: 1700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
+@media (max-width: 900px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
     font-size: 2rem;
   }
 }
-@media (max-width: 1500px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 1300px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 1100px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 900px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.6rem;
-  }
-}
 @media (max-width: 600px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.6rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
+    font-size: 2rem;
   }
 }
-@media (max-width: 450px) {
-  .container-main-projects #projects .container-main .container-projects .container-project p {
-    font-size: 1.2rem;
-  }
-}
-.container-main-projects #projects .container-main .container-projects .container-project div {
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
 }
-.container-main-projects #projects .container-main .container-projects .container-project div button {
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button {
   transition-duration: 1s;
-  display: none;
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 2rem;
   padding: 1rem;
   color: #FFFFFF;
   background-color: #17A2B8;
   border: 1px solid #1b242f;
   border-radius: 0.5rem;
   width: 45%;
-  height: auto;
-  margin-bottom: 2rem;
-}
-@media (max-width: 1100px) {
-  .container-main-projects #projects .container-main .container-projects .container-project div button {
-    font-size: 1.2rem;
-  }
 }
 @media (max-width: 900px) {
-  .container-main-projects #projects .container-main .container-projects .container-project div button {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project div button {
-    font-size: 1.6rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button {
+    font-size: 2rem;
   }
 }
 @media (max-width: 600px) {
-  .container-main-projects #projects .container-main .container-projects .container-project div button {
-    font-size: 1.6rem;
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button {
+    font-size: 2rem;
+    width: 100%;
   }
 }
-@media (max-width: 450px) {
-  .container-main-projects #projects .container-main .container-projects .container-project div button {
-    font-size: 1.2rem;
-  }
-}
-.container-main-projects #projects .container-main .container-projects .container-project div button:hover {
+.container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button:hover {
   color: #1b242f;
   background-color: #f58a11;
   border: 1px solid #1b242f;
   border-radius: 0.5rem;
 }
-@media (max-width: 700px) {
-  .container-main-projects #projects .container-main .container-projects .container-project {
+@media (max-width: 600px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons {
+    flex-direction: column;
+    height: 11rem;
+  }
+}
+@media (max-width: 900px) {
+  .container-main-projects #projects .container-main {
     width: 100%;
   }
 }
 @media (max-width: 600px) {
-  .container-main-projects #projects .container-main .container-projects .container-project {
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  .container-main-projects #projects .container-main .container-projects .container-project {
-    width: 100%;
-  }
-}
-.container-main-projects #projects .container-main .container-project:hover {
-  cursor: pointer;
-  background-color: #1b242f;
-  min-height: auto;
-}
-.container-main-projects #projects .container-main .container-project:hover img {
-  opacity: 0;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute .tap-here {
-  display: none;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute h3 {
-  display: initial;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute h4 {
-  display: initial;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute p {
-  display: initial;
-}
-.container-main-projects #projects .container-main .container-project:hover .container-project-absolute button {
-  display: initial;
-}
-@media (max-width: 900px) {
   .container-main-projects #projects .container-main {
     width: 100%;
   }

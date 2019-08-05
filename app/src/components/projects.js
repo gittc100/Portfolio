@@ -19,7 +19,7 @@ let projects = [
     title: "One Line A Day",
     sub_title: `LESS, React.js, Redux.js, express.js, node.js, postgresSQL`,
     description:
-      "One Line a Day is a personal journal allowing the user to create, view and edit a single entry per day in a span of ten years.",
+      "One Line a Day is a personal journal allowing the user to create a profile, intializing a new journal fitted with 10 years worth of entries starting from the intial date of registration. The journal owner has the capability to login and access their journal at any time. All entries are editable. Additional features include sorting entries by current month and year",
     domain_link: "https://www.one-line-a-day.com/",
     gitrepo: "https://github.com/gittc100/One_Line_A_Day_Thomas_Front_End",
     photos: lineImage
@@ -46,20 +46,22 @@ class Projects extends Component {
               {projects.map(item => {
                 return (
                   <div key={item.id} className="container-project">
-                    <img src={item.photos} alt="not working" />
                     <div className="container-project-absolute">
-                      <h3>{item.title}</h3>
-                      <div className="tap-here"><p>TAP</p></div>
-                      <h4>Stack:<br/>{item.sub_title}</h4>
+                      <div className="container-title">
+                        <img src={item.photos} alt="not working" />
+                        <h3>{item.title}</h3>
+                        <div className="container-fake-img"/>
+                      </div>
+                      <h4>Architecture: {item.sub_title}</h4>
                       <p>{item.description}</p>
-                      <div>
+                      <div className="container-buttons">
                         <button
                           onClick={event => {
                             event.preventDefault();
                             window.open(item.domain_link);
                           }}
                         >
-                          Site
+                          View Site
                         </button>
                         <button
                           onClick={event => {
@@ -67,7 +69,7 @@ class Projects extends Component {
                             window.open(item.gitrepo);
                           }}
                         >
-                          Repo
+                          View Repository
                         </button>
                       </div>
                     </div>
