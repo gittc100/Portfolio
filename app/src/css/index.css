@@ -549,6 +549,18 @@ textarea {
     height: 5rem;
   }
 }
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+@media (max-width: 400px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
   color: #FFFFFF;
   text-align: center;
@@ -565,12 +577,32 @@ textarea {
     font-size: 3rem;
   }
 }
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 400px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title h3 {
+    font-size: 1.8rem;
+  }
+}
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
   width: 7rem;
 }
 @media (max-width: 600px) {
   .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
     width: 5rem;
+  }
+}
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 400px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-title .container-fake-img {
+    display: none;
   }
 }
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute h4 {
@@ -595,6 +627,12 @@ textarea {
     line-height: 2rem;
   }
 }
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute h4 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+}
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
   color: #FFFFFF;
   text-align: left;
@@ -611,6 +649,12 @@ textarea {
 @media (max-width: 600px) {
   .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
     font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute p {
+    font-size: 1.8rem;
+    line-height: 2rem;
   }
 }
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons {
@@ -640,6 +684,11 @@ textarea {
     width: 100%;
   }
 }
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button {
+    font-size: 1.8rem;
+  }
+}
 .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons button:hover {
   color: #1b242f;
   background-color: #f58a11;
@@ -650,6 +699,11 @@ textarea {
   .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons {
     flex-direction: column;
     height: 11rem;
+  }
+}
+@media (max-width: 500px) {
+  .container-main-projects #projects .container-main .container-projects .container-project .container-project-absolute .container-buttons {
+    height: 10.5rem;
   }
 }
 @media (max-width: 900px) {

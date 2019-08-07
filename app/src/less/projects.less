@@ -47,6 +47,14 @@
                 width: 5rem;
                 height: 5rem;
               }
+              @media (max-width: 500px) {
+                width: 4rem;
+                height: 4rem;
+              }
+              @media (max-width: 400px) {
+                width: 3rem;
+                height: 3rem;
+              }
             }
             h3 {
               color: @white;
@@ -59,11 +67,23 @@
               @media @mobile {
                 font-size: 3rem;
               }
+              @media (max-width: 500px) {
+                font-size: 2.2rem;
+              }
+              @media (max-width: 400px) {
+                font-size: 1.8rem;
+              }
             }
             .container-fake-img{
               width: 7rem;
               @media @mobile {
                 width: 5rem;
+              }
+              @media (max-width: 500px) {
+                font-size: 4rem;
+              }
+              @media (max-width: 400px) {
+                display: none;
               }
             }
           }
@@ -84,6 +104,10 @@
                 font-size: 2rem;
                 line-height: 2rem;
               }
+              @media (max-width: 500px) {
+                font-size: 1.8rem;
+                line-height: 2rem;
+              }
             }
             p {
               color: @white;
@@ -97,6 +121,10 @@
               }
               @media @mobile {
                 font-size: 2rem;
+              }
+              @media (max-width: 500px) {
+                font-size: 1.8rem;
+                line-height: 2rem;
               }
             }
             .container-buttons {
@@ -120,6 +148,9 @@
                   font-size: 2rem;
                   width: 100%;
                 }
+                @media (max-width: 500px) {
+                  font-size: 1.8rem;
+                }
               }
               button:hover {
                 color: @dark-slate;
@@ -130,6 +161,9 @@
               @media @mobile {
                 flex-direction: column;
                 height: 11rem;
+              }
+              @media (max-width: 500px) {
+                height: 10.5rem;
               }
           }
           }
